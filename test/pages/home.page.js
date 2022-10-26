@@ -1,6 +1,6 @@
 const Page = require("../pages/page");
 const HomeScreen = require('../screens/home');
-const CommonTest = require('../../utility/CommonTest');
+const CommonTest = require('../../utility/commontest');
 
 class HomePage extends Page {
 
