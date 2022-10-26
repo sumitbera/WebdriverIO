@@ -18,18 +18,5 @@ class CheckBoxScreen extends Page{
     get toggleCheck() {
         return $(checkboxLocator.TOGGLE_CHECK);
     }
-
-    async clickCheckBoxOption(){
-        await this.checkBoxOption.click();
-    }
-
-    async clickHomeCheckOption(){
-        await this.homeCheckOption.click();
-    }
-
-    async clickToggleOption(){
-        await this.toggleCheck.click();
-    }
-
 }
 module.exports = new CheckBoxScreen();
