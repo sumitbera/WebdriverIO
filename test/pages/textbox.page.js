@@ -1,37 +1,61 @@
 const Page = require("../pages/page");
-const TextBoxScreen = require('../screens/textbox');
+const textBoxLocator = require('../../locators/textboxscreen');
 const CommonTest = require('../../utility/commontest');
 const Constants = require('../../utility/appconstants');
 
 class TextBoxPage extends Page {
 
+    get textBoxOption() {
+        return $(textBoxLocator.TEXT_BOX_OPTION)
+    }
+
+    get fullName() {
+        return $(textBoxLocator.FULL_NAME)
+    }
+
+    get email() {
+        return $(textBoxLocator.EMAIL)
+    }
+
+    get currentAddress() {
+        return $(textBoxLocator.CURRENT_ADDRESS)
+    }
+
+    get permanentAddress() {
+        return $(textBoxLocator.PERMANENT_ADDRESS)
+    }
+
+    get submitBtn() {
+        return $(textBoxLocator.SUBMIT_BTN)
+    }
+
     async clickTextBoxOption() {
-        await CommonTest.doClick(TextBoxScreen.textBoxOption);
+        await CommonTest.doClick(this.textBoxOption)
     }
 
     async enterFullName() {
-        await CommonTest.doAddValue(TextBoxScreen.fullName, Constants.FULL_NAME);
+        await CommonTest.doAddValue(this.fullName, Constants.FULL_NAME)
     }
 
     async enterEmailAddress() {
-        await CommonTest.doAddValue(TextBoxScreen.email, Constants.EMAIL_ADDRESS);
+        await CommonTest.doAddValue(this.email, Constants.EMAIL_ADDRESS)
     }
 
     async enterCurrentAddress() {
-        await CommonTest.doAddValue(TextBoxScreen.currentAddress, Constants.ADDRESS);
+        await CommonTest.doAddValue(this.currentAddress, Constants.ADDRESS)
     }
 
     async enterPermanentAddress() {
-        await CommonTest.doAddValue(TextBoxScreen.permanentAddress, Constants.ADDRESS);
+        await CommonTest.doAddValue(this.permanentAddress, Constants.ADDRESS)
     }
 
     async clickSubmitBtn() {
-        await CommonTest.doClick(TextBoxScreen.submitBtn);
+        await CommonTest.doClick(this.submitBtn)
     }
 
     async scrollTillSubmitBtn() {
-        await CommonTest.doScrollTillText(TextBoxScreen.submitBtn);
+        await CommonTest.doScrollTillText(this.submitBtn)
     }
 }
 
-module.exports = new TextBoxPage();
+module.exports = new TextBoxPage()

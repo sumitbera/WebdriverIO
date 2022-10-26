@@ -3,7 +3,7 @@ module.exports = class Page{
         this.title = 'My Page'
     }
 
-    async open (path){
-        await browser.url(path)
+    open (path){
+        browser.url(path)
     }
 }

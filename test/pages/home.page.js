@@ -1,20 +1,28 @@
 const Page = require("../pages/page");
-const HomeScreen = require('../screens/home');
+const homeLocators = require("../../locators/homescreen")
 const CommonTest = require('../../utility/commontest');
 
 class HomePage extends Page {
 
+    get elementSection() {
+        return $(homeLocators.ELEMENT_SELECTION)
+    }
+
+    get selectionLabel() {
+        return $(homeLocators.SELECTION_LABEL)
+    }
+
     async open() {
-        await super.open('/');
+        super.open('/')
     }
 
     async clickOnElementSection() {
-        await CommonTest.doClick(HomeScreen.elementSection);
+        await CommonTest.doClick(this.elementSection)
     }
 
     async scrollToElementSection() {
-        await CommonTest.doScrollTillText(HomeScreen.elementSection);
+        await CommonTest.doScrollTillText(this.elementSection)
     }
 
 }
-module.exports = new HomePage();
+module.exports = new HomePage()
