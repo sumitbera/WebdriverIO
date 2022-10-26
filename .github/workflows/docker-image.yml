@@ -26,4 +26,4 @@ jobs:
       #Run your webdriverIO docker test
     - name: Run WebdriverIo Tests
       id: docker_run
-      run: docker run -it webdriver-io
+      run: docker run webdriver-io
