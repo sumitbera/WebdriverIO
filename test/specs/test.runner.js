@@ -1,8 +1,6 @@
-// const homePage = require("../pages/home")
-// const textBoxPage = require("../pages/textbox")
-// const checkBoxPage = require("../pages/checkbox")
 const homePage = require('../pages/home.page');
 const textBoxPage = require('../pages/textbox.page');
+const checkBoxPage = require('../pages/checkbox.page');
 
 describe("interaction with web element", () => {
 
@@ -25,10 +23,10 @@ describe("interaction with web element", () => {
         await textBoxPage.clickSubmitBtn();
     })
 
-    // it("Select checkbox options", async () => {
-    //     await browser.pause(1000);
-    //     await checkBoxPage.clickCheckBoxOption();
-    //     await checkBoxPage.clickHomeCheckOption();
-    //     await checkBoxPage.clickToggleOption();
-    // })
+    it("Select checkbox options", async () => {
+        await browser.pause(1000);
+        await checkBoxPage.clickCheckBoxOption();
+        await checkBoxPage.clickHomeCheckOption();
+        await checkBoxPage.clickToggleOption();
+    })
 });
