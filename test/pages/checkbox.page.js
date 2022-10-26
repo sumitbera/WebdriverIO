@@ -1,6 +1,6 @@
 const Page = require("../pages/page");
 const CheckBoxScreen = require('../screens/checkbox');
-const CommonTest = require('../../utility/CommonTest');
+const CommonTest = require('../../utility/commontest');
 
 class CheckBoxPage extends Page{
 
