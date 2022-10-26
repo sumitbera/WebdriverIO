@@ -1,0 +1,29 @@
+name: WebDriver.IO Automation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  WebDriverIO_Automation_For_Web:
+    runs-on: ubuntu-latest
+    name: Job to build and run docker test for webdriver.io
+    steps:
+    - uses: actions/checkout@v3
+      #In this step, this action saves a list of existing images,
+      #the cache is created without them in the post run.
+      #It also restores the cache if it exists.
+    - uses: satackey/action-docker-layer-caching@v0.0.11
+      continue-on-error: true
+
+      #Build your docker image of playwright test
+    - name: Build WebdriverIO Docker Image
+      id: docker_build
+      run: docker build -t webdriver-io .
+
+      #Run your webdriverIO docker test
+    - name: Run WebdriverIo Tests
+      id: docker_run
+      run: docker run -it webdriver-io
