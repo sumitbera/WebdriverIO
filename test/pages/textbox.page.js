@@ -1,6 +1,6 @@
 const Page = require("../pages/page");
 const TextBoxScreen = require('../screens/textbox');
-const CommonTest = require('../../utility/CommonTest');
+const CommonTest = require('../../utility/commontest');
 const Constants = require('../../utility/appconstants');
 
 class TextBoxPage extends Page {
