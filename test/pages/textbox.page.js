@@ -1,36 +1,37 @@
 const Page = require("../pages/page");
 const TextBoxScreen = require('../screens/textbox');
 const CommonTest = require('../../utility/CommonTest');
+const Constants = require('../../utility/appconstants');
 
-class TextBoxPage extends Page{
+class TextBoxPage extends Page {
 
-    async clickTextBoxOption(){
+    async clickTextBoxOption() {
         await CommonTest.doClick(TextBoxScreen.textBoxOption);
     }
 
-    async enterFullName(){
-        await CommonTest.doAddValue(TextBoxScreen.fullName,'Sumit Bera');
+    async enterFullName() {
+        await CommonTest.doAddValue(TextBoxScreen.fullName, Constants.FULL_NAME);
     }
 
-    async enterEmailAddress(){
-        await CommonTest.doAddValue(TextBoxScreen.email,'sumit_test@xyz.com');
+    async enterEmailAddress() {
+        await CommonTest.doAddValue(TextBoxScreen.email, Constants.EMAIL_ADDRESS);
     }
 
-    async enterCurrentAddress(){
-        await CommonTest.doAddValue(TextBoxScreen.currentAddress,'26 Coowarra Way, Berwik');
+    async enterCurrentAddress() {
+        await CommonTest.doAddValue(TextBoxScreen.currentAddress, Constants.ADDRESS);
     }
 
-    async enterPermanentAddress(){
-        await CommonTest.doAddValue(TextBoxScreen.permanentAddress,'26 Coowarra Way, Berwik');
+    async enterPermanentAddress() {
+        await CommonTest.doAddValue(TextBoxScreen.permanentAddress, Constants.ADDRESS);
     }
 
-    async clickSubmitBtn(){
+    async clickSubmitBtn() {
         await CommonTest.doClick(TextBoxScreen.submitBtn);
     }
 
-    async scrollTillSubmitBtn(){
+    async scrollTillSubmitBtn() {
         await CommonTest.doScrollTillText(TextBoxScreen.submitBtn);
-    } 
+    }
 }
 
 module.exports = new TextBoxPage();
