@@ -4,13 +4,17 @@ const checkBoxPage = require('../pages/checkbox.page');
 
 describe("interaction with web element", () => {
 
-    it("Search Elements", async () => {
-        await homePage.open();
-        await expect(browser).toHaveUrlContaining('demo');
+    before('Launch ToolsQA application', async () => {
+        await homePage.open()
+        await expect(browser).toHaveUrlContaining('demo')
         await browser.pause(1000)
-        await homePage.scrollToElementSection();
-        await homePage.clickOnElementSection();
-    });
+    })
+
+    it("Search Elements", async () => {
+        await homePage.scrollToElementSection()
+        await homePage.clickOnElementSection()
+        await browser.pause(1000)
+    })
 
     it("Enter value in Text box", async () => {
         await browser.pause(1000)
