@@ -1,3 +1,15 @@
+const { Reporter } = require('@reportportal/agent-js-webdriverio');
+
+const config = {
+        token: '', //token of report portal server
+        endpoint: '', // report portal host url
+        launch: 'WebdriverIO',
+        project: 'superadmin_personal',
+        description: "WebDriver IO Test",
+        seleniumCommandsLogLevel: 'debug',
+        attachPicturesToLogs: true
+};
+
 exports.config = {
     //
     // ====================
@@ -58,15 +70,6 @@ exports.config = {
         //
         browserName: 'chrome',
         acceptInsecureCerts: true,
-        'goog:chromeOptions': {
-            args: [
-                '--no-sandbox',
-                '--disable-infobars',
-                '--headless',
-                '--disable-gpu',
-                '--window-size=1440,735'
-            ],
-        }
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -141,7 +144,9 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec', ['allure', { outputDir: 'allure-results' }]],
+    //reporters: ['spec', ['allure', { outputDir: 'allure-results' }],[Reporter,config]],
+    //reporters: [[Reporter, config]],
+    reporters: [[Reporter, config]],
 
 
 
