@@ -30,6 +30,7 @@ class TextBoxPage extends Page {
     }
 
     async clickTextBoxOption() {
+        await expect(this.textBoxOption).toBeEnabled()
         await CommonTest.doClick(this.textBoxOption)
     }
 
@@ -50,11 +51,14 @@ class TextBoxPage extends Page {
     }
 
     async clickSubmitBtn() {
+        await expect(this.submitBtn).toBeEnabled()
         await CommonTest.doClick(this.submitBtn)
+        
     }
 
     async scrollTillSubmitBtn() {
         await CommonTest.doScrollTillText(this.submitBtn)
+        await expect(this.submitBtn).toBeDisplayed()
     }
 }
 
