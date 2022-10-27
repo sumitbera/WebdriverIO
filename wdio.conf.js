@@ -1,8 +1,8 @@
 const { Reporter } = require('@reportportal/agent-js-webdriverio');
 
 const config = {
-    token: 'faadc3b8-2ae8-4b45-80c2-39a627799819',
-    endpoint: 'http://13.214.198.245:8080/api/v1',
+    token: '', // report-portal server token
+    endpoint: '', // report-portal host name
     launch: 'WebdriverIO',
     project: 'superadmin_personal',
     description: "WebDriver IO Test",
