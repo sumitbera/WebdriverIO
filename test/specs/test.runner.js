@@ -6,7 +6,6 @@ describe("interaction with web element", () => {
 
     before('Launch ToolsQA application', async () => {
         await homePage.open()
-        await expect(browser).toHaveUrlContaining('demo')
         await browser.pause(1000)
     })
 
