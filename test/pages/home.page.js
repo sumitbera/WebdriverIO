@@ -1,6 +1,7 @@
 const Page = require("../pages/page");
 const homeLocators = require("../../locators/homescreen")
 const CommonTest = require('../../utility/commontest');
+const Constants = require('../../utility/appconstants');
 
 class HomePage extends Page {
 
@@ -14,6 +15,7 @@ class HomePage extends Page {
 
     async open() {
         super.open('/')
+        await expect(browser).toHaveUrlContaining(Constants.LINK_TEXT)
     }
 
     async clickOnElementSection() {
@@ -22,6 +24,7 @@ class HomePage extends Page {
 
     async scrollToElementSection() {
         await CommonTest.doScrollTillText(this.elementSection)
+        await expect(this.elementSection).toBeDisplayed()
     }
 
 }
