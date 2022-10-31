@@ -37,6 +37,18 @@ describe("interaction with web element", () => {
     await browser.pause(1000);
     await webTablePage.clickWebTableOption();
     await webTablePage.getListOfItemsFromTable();
+  });
+
+  it("Enter registration details", async () => {
+    await browser.pause(1000);
+    await webTablePage.clickAddBtn();
+    await webTablePage.enterFirstNameForRegistration();
+    await webTablePage.enterLastNameForRegistration();
+    await webTablePage.enterYourEmailAddress();
+    await webTablePage.enterYourAge();
+    await webTablePage.enterYourSalary();
+    await webTablePage.enterYourDepartment();
+    await webTablePage.clickSubmitBtn();
     await browser.pause(5000);
   });
 });
