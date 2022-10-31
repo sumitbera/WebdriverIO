@@ -53,7 +53,6 @@ class TextBoxPage extends Page {
     async clickSubmitBtn() {
         await expect(this.submitBtn).toBeEnabled()
         await CommonTest.doClick(this.submitBtn)
-        
     }
 
     async scrollTillSubmitBtn() {
