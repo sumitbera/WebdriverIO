@@ -6,7 +6,19 @@ describe("Scan and Fetch QR Code", () => {
     await browser.pause(1000);
   });
 
-  it("Scan QR Code",async () =>{
+  it("Verify QR Layout", async () => {
+    await browser.pause(1000);
+    await qrPage.verifyQrLayout();
+  });
 
+  it("Verify QR Image", async () => {
+    await browser.pause(1000);
+    await qrPage.verifyQrImage();
+  });
+
+  it("Capture and Store QR code", async() =>{
+    await browser.pause(1000);
+    await qrPage.deleteFileIfExists();
+    await qrPage.captureQrCode();
   })
 });
