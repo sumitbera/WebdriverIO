@@ -1,14 +1,14 @@
-const { Reporter } = require('@reportportal/agent-js-webdriverio');
+// const { Reporter } = require('@reportportal/agent-js-webdriverio');
 
-const config = {
-    token: '', // report-portal server token
-    endpoint: '', // report-portal host name
-    launch: 'WebdriverIO',
-    project: 'superadmin_personal',
-    description: "WebDriver IO Test",
-    seleniumCommandsLogLevel: 'debug',
-    attachPicturesToLogs: true
-};
+// const config = {
+//     token: 'faadc3b8-2ae8-4b45-80c2-39a627799819',
+//     endpoint: 'http://13.214.198.245:8080/api/v1',
+//     launch: 'WebdriverIO',
+//     project: 'superadmin_personal',
+//     description: "WebDriver IO Test",
+//     seleniumCommandsLogLevel: 'debug',
+//     attachPicturesToLogs: true
+// };
 
 exports.config = {
     //
@@ -70,7 +70,7 @@ exports.config = {
         //
         browserName: 'chrome',
         acceptInsecureCerts: true,
-        'goog:chromeOptions': {
+        'google:chromeOptions': {
             args: [
                 '--no-sandbox',
                 '--disable-infobars',
@@ -116,7 +116,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://demoqa.com/',
+    baseUrl: 'https://test-studio.oliu.id/login',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -156,7 +156,8 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     //reporters: ['spec', ['allure', { outputDir: 'allure-results' }],[Reporter,config]],
     //reporters: [[Reporter, config]],
-    reporters: ['spec', [Reporter, config]],
+    reporters: ['spec', ['allure', { outputDir: 'allure-results' }]],
+    //reporters: ['spec', [Reporter, config]],
 
 
 
