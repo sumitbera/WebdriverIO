@@ -1,5 +1,5 @@
 module.exports = class Page{
-    constructor(){
+    constructor(drivers){
         this.title = 'My Page'
     }
 
